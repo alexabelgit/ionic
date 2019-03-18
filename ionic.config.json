@@ -1,0 +1,8 @@
+{
+  "name": "centegix-response-mobile",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "id": "4d7cfeb2"
+}

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "59025524695",
+    "firebase_url": "https://centegix-crisis.firebaseio.com",
+    "project_id": "centegix-crisis",
+    "storage_bucket": "centegix-crisis.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:59025524695:android:a02fdd4898d9bc6b",
+        "android_client_info": {
+          "package_name": "com.centegix.CentegixResponse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "59025524695-882b2pkst0gfj83fl0hlch1tiirjgfbg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDU0RVQuB2aXpzuXDj1ftVIuD2tq_SBuxU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

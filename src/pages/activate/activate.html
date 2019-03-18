@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar color="light-grey">
+    <ion-buttons left>
+    </ion-buttons>
+    <ion-title><img id="logo" src="/assets/img/top-logo.png"></ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only tappable (click)="settings()"><ion-icon name="cog"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <div *ngFor="let ao of alertOptions">
+    <button ion-button icon-start block class="large-button" [style.background-color]="ao.color" tappable (click)="alert()">
+        <img src="/assets/img/{{ao.icon}}">
+        <div class="title" [style.border-left-color]="ao.altColor" [style.color]="ao.altColor">{{ao.name}}</div>
+    </button>
+  </div>
+</ion-content>

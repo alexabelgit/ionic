@@ -1,0 +1,30 @@
+page-alerts {
+  #bell {
+    width: 90px;
+    margin: auto;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  h1 {
+    color: #777 !important;
+  }
+
+  ion-item {
+    box-shadow: 1px 0px 5px #CCC;
+    border-radius: 10px !important;
+    border-bottom: 3px #F00 solid;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+
+    .item-button {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+  }
+}
