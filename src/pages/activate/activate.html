@@ -2,19 +2,26 @@
   <ion-navbar color="light-grey">
     <ion-buttons left>
     </ion-buttons>
-    <ion-title><img id="logo" src="/assets/img/top-logo.png"></ion-title>
+    <ion-title><img id="logo" src="assets/img/new_logo_top.png"></ion-title>
     <ion-buttons right>
-      <button ion-button icon-only tappable (click)="settings()"><ion-icon name="cog"></ion-icon></button>
+      <button ion-button icon-only tappable (click)="settings()" style="z-index: 999; position: absolute; top: -19px; right: 0px;">
+        <ion-icon name="cog"></ion-icon>
+      </button>
     </ion-buttons>
   </ion-navbar>
+  <div class="location-dropdown">
+    <ion-select [(ngModel)]="selectedLocation" (ionChange)="onSelectChange($event)">
+      <ion-option *ngFor="let l of locations" value="{{l.id}}">{{l.nameDisplay}}</ion-option>
+    </ion-select>
+  </div>
 </ion-header>
 
 
 <ion-content padding>
   <div *ngFor="let ao of alertOptions">
-    <button ion-button icon-start block class="large-button" [style.background-color]="ao.color" tappable (click)="alert()">
-        <img src="/assets/img/{{ao.icon}}">
-        <div class="title" [style.border-left-color]="ao.altColor" [style.color]="ao.altColor">{{ao.name}}</div>
+    <button ion-button icon-start block class="large-button" [ngClass]="ao.primary_color" tappable
+      (click)="alert(ao.id, ao.name, selectedLocation)">
+      <div class="title" [style.border-left-color]="ao.altColor" [style.color]="ao.altColor">{{ao.name}} <span *ngIf="ao.is_test">Test</span></div>
     </button>
   </div>
 </ion-content>

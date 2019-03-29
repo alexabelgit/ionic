@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import { GlobalProvider } from '../global/global';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/toPromise';
@@ -20,9 +21,9 @@ export class User {
 @Injectable()
 export class AuthServiceProvider {
   currentUser: User;
-  apiUrl = "https://centegix-api-dev.herokuapp.com/v1/";
 
-  constructor(public http: HttpClient) {
+  constructor(public http: HttpClient,
+    private globals: GlobalProvider) {
     console.log('Hello AuthServiceProvider Provider');
   }
 
@@ -35,7 +36,7 @@ export class AuthServiceProvider {
         password: credentials.password
       };
 
-      return this.http.post(this.apiUrl+'login', JSON.stringify(body), {
+      return this.http.post(this.globals.apiUrl+'login', JSON.stringify(body), {
         headers:{
           'content':"application/json",
           'content-type':"application/json"

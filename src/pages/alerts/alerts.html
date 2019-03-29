@@ -2,7 +2,7 @@
   <ion-navbar color="light-grey">
     <ion-buttons left>
     </ion-buttons>
-    <ion-title><img id="logo" src="assets/img/top-logo.png"></ion-title>
+    <ion-title><img id="logo" src="assets/img/new_logo_top.png"></ion-title>
     <ion-buttons right>
       <button ion-button icon-only tappable (click)="settings()"><ion-icon name="cog"></ion-icon></button>
     </ion-buttons>
@@ -22,12 +22,11 @@
       </ion-card>
  
  
-  <ion-list>
-    <ion-item *ngFor="let a of alerts">
-      <h2>Alert at {{a.location.nameDisplay}}</h2>
+  <ion-list style="height: 100%">
+    <button ion-item *ngFor="let a of alerts" (click)='map();'>
+      <h2>{{a.alerttype.name}} at {{a.location.nameDisplay}}</h2>
       <h4>Opened By: {{a.openedby.firstname}} {{a.openedby.lastname}}</h4>
-      <button ion-button (click)='map();'>View Map</button>
-    </ion-item>
+    </button>
   </ion-list>
 
 

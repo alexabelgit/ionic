@@ -12,6 +12,8 @@ import { MapPage } from '../map/map';
 export class AlertsPage {
 
   alerts: string[];
+  locations;
+  selectedLocation;
   success: string;
   errorMessage: string;
 
@@ -21,6 +23,8 @@ export class AlertsPage {
     public rest: RestProvider,
     public storage: NativeStorage) {
       this.alerts = [];
+      this.selectedLocation = null;
+      this.locations = [];
   }
 
   settings() {

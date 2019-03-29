@@ -21,6 +21,7 @@ import { RestProvider } from '../providers/rest/rest';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { Push } from '@ionic-native/push';
 import { GlobalProvider } from '../providers/global/global';
+import { FCM } from '@ionic-native/fcm';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { GlobalProvider } from '../providers/global/global';
     NativeStorage,
     Push,
     GlobalProvider,
-    ThemeableBrowser
+    ThemeableBrowser,
+    FCM
   ]
 })
 export class AppModule {}

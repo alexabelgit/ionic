@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { GlobalProvider } from '../global/global';
@@ -44,7 +44,7 @@ export class RestProvider {
       UserId: "1",
       token: userToken,
       type: type,
-      name: userEmail + "'s "+type+" Device",
+      name: userEmail + "'s " + type + " Device",
       app_token: deviceToken
     };
     return this.http.post(this.globals.apiUrl + 'users/pcds', JSON.stringify(body), {
@@ -55,6 +55,32 @@ export class RestProvider {
     }).catch(this.handleError);
   }
 
+  public startAlert(token, alert_type_id, location_id) {
+    /*
+    const formData = new FormData();
+    console.log('Token'+token);
+    formData.append('token', token);
+    formData.append('alerttype_id', alert_type_id);
+    formData.append('location_id', location_id);
+    return this.http.post(this.globals.apiUrl + 'alerts/location', formData, {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/x-www-form-urlencoded'
+      })
+    }).catch(this.handleError);
+    */
+    let body = {
+      token: token,
+      alerttype_id: alert_type_id,
+      location_id: location_id
+    };
+    return this.http.post(this.globals.apiUrl + 'alerts/location', JSON.stringify(body), {
+      headers: {
+        'content': "application/json",
+        'content-type': "application/json"
+      }
+    });
+  }
+
   getCountries(): Observable<string[]> {
     return this.http.get(this.globals.apiUrl)
       .catch(this.handleError);
@@ -62,6 +88,17 @@ export class RestProvider {
 
   getAlerts(token): Observable<string[]> {
     return this.http.get(this.globals.apiUrl + 'alerts?token=' + token)
+      .catch(this.handleError);
+  }
+
+  getLocations(token): Observable<string[]> {
+    console.log("Trying to get Locations");
+    return this.http.get(this.globals.apiUrl + 'locations/locations?token=' + token)
+      .catch(this.handleError);
+  }
+  getAlertTypes(token, location_id): Observable<string[]> {
+    console.log("Trying to get Locations");
+    return this.http.get(this.globals.apiUrl + 'locations/locations/' + location_id + '/alerttypes?token=' + token)
       .catch(this.handleError);
   }
 

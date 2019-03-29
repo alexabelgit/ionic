@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-packageName="com.centegix.CentegixResponse" id="com.centegix.centegix-response" ios-CFBundleIdentifier="com.centegix.centegix-response" version="0.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget android-packageName="com.centegix.CentegixResponse" id="com.centegix.centegix-response" ios-CFBundleIdentifier="com.centegix.centegix-response" version="0.0.7" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Centegix</name>
     <description>Centegix</description>
     <author email="dev@centegix.com" href="http://centegix.com/">Centegix Team</author>
@@ -23,6 +23,7 @@
     <platform name="android">
         <allow-intent href="market:*" />
         <resource-file src="google-services.json" target="app/google-services.json" />
+        <resource-file src="google-services.json" target="google-services.json" />
         <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
         <icon density="mdpi" src="resources/android/icon/drawable-mdpi-icon.png" />
         <icon density="hdpi" src="resources/android/icon/drawable-hdpi-icon.png" />
@@ -86,14 +87,13 @@
     <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />
     <plugin name="cordova-plugin-ionic-webview" spec="^2.2.0" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.1.3" />
-    <plugin name="cordova-sqlite-storage" spec="^2.5.0" />
     <plugin name="phonegap-plugin-push" spec="^2.1.3" />
-    <plugin name="cordova-plugin-nativestorage" spec="^2.3.2" />
     <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
     <plugin name="cordova-plugin-themeablebrowser" spec="^0.2.17" />
     <plugin name="cordova-plugin-console" spec="^1.1.0" />
-    <engine name="ios" spec="4.5.0" />
+    <plugin name="cordova-plugin-fcm-with-dependecy-updated" spec="~2.4.0" />
+    <plugin name="cordova-plugin-nativestorage" spec="^2.3.2" />
+    <plugin name="cordova-sqlite-storage" spec="^2.5.0" />
     <engine name="browser" spec="5.0.4" />
-    <engine name="android" spec="7.1.4" />
-    <plugin name="cordova-plugin-fcm-with-dependecy-updated" spec="2.4.0" />
+    <engine name="android" spec="7.0.0" />
 </widget>

@@ -3,6 +3,10 @@ page-alerts {
     width: 90px;
     margin: auto;
   }
+  ion-select {
+    margin:auto;
+    max-width: 65%;
+  }
 
   .text-center {
     text-align: center;
@@ -25,6 +29,8 @@ page-alerts {
       position: absolute;
       right: 10px;
       top: 10px;
+      background: #F00;
+      color: #FFF;
     }
   }
 }

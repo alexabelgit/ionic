@@ -1,27 +1,53 @@
 page-activate {
-    .large-button{
-        height: 90px;
-        border-radius: 10px;
-        margin-bottom: 15px;
-        position: relative;
-        .title{
-            font-size: 25px;
-            font-weight: bold;
-            text-align: left;
-            border-left: 1px solid white;
-            height: 50px;
-            vertical-align: middle;
-            padding-top: 12px;
-            padding-left: 15px;
-            margin-left: 15px;
-            position: absolute;
-            left: 95px;
-        }
-        img{
-            position: absolute;
-            left: 15px;
-            width: 90px;
-            display: block;
-        }
-    }
+  ion-select {
+    margin:auto;
+    max-width: 65%;
+  }
+
+  .large-button{
+      height: 90px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      position: relative;
+      .title{
+          font-size: 25px;
+          font-weight: bold;
+          text-align: left;
+          height: 50px;
+          vertical-align: middle;
+          padding-top: 12px;
+      }
+      img{
+          position: absolute;
+          left: 15px;
+          width: 90px;
+          display: block;
+      }
+      &.yellow{
+        background-color:#ffdf1b;
+        color:#3f3f3f;
+      }
+      &.red{
+        background-color:#ef3c2c;
+        color:#FFFFFF;
+      }
+      &.blue{
+        background-color:#0066b4;
+        color:#FFFFFF;
+      }
+      &.green{
+        background-color:#01ad75;
+        color:#FFFFFF;
+      }
+      &.white{
+        background-color:#e1e1e1;
+        color:#565656;
+      }
+      span{
+        position: absolute;
+        top: 3px;
+        right: 3px;
+        font-size: 13px;
+      }
+  }
 }

@@ -6,6 +6,8 @@ import { Push, PushObject, PushOptions } from '@ionic-native/push';
 import { NativeStorage } from '@ionic-native/native-storage';
 //import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
+import { FCM } from '@ionic-native/fcm';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -17,13 +19,25 @@ export class MyApp {
     public statusBar: StatusBar,
     public splashScreen: SplashScreen,
     public push: Push,
-    private storage: NativeStorage) {
+    private storage: NativeStorage,
+    public plt: Platform,
+    private fcm: FCM) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
+      if (this.plt.is('android')) {
+        console.log("I am Android");
+        this.fcm.getToken().then(token => {
+          console.log("Got a new token:"+token);
+          this.storage.setItem("deviceToken", token);
+        });
+      }
+
       statusBar.styleDefault();
       splashScreen.hide();
-      this.initPushNotification();
+      if (this.plt.is('ios')) {
+        this.initPushNotification();
+      }
     });
   }
 

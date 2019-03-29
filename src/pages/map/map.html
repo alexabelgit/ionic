@@ -10,7 +10,7 @@
     <ion-buttons left>
         <button ion-button icon-only tappable (click)="goBack()"><ion-icon name="arrow-back"></ion-icon></button>
     </ion-buttons>
-    <ion-title>Map</ion-title>
+    <ion-title>Active Alert</ion-title>
     <ion-buttons right>
     </ion-buttons>
   </ion-navbar>
@@ -18,6 +18,6 @@
 </ion-header>
 
 
-<ion-content overflow-scroll="true">
-  <iframe style="width:100%;height:100%" src="https://centegix-web-app-dev.herokuapp.com/auth/loginToken?username=adam&password=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoxLCJpYXQiOjE1Mzk0ODA0OTJ9.FXH8viAFpepmwnfKfiqneXeQc92NnclVA7bzoyuxokE"></iframe>
+<ion-content>
+  <iframe style="width:100%;" [style.height.px]="screenHeight" [src]="url"></iframe>
 </ion-content>
